@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>TaskNest – Dashboard</title>
+    <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body>
+
+<header>
+    <h1>TaskNest</h1>
+    <nav>
+        <a href="index.html">Dashboard</a>
+        <a href="calendar.html">Calendar</a>
+        <a href="login.html">Logout</a>
+    </nav>
+</header>
+
+<section class="container">
+    <h2>Your Tasks</h2>
+
+    <form id="taskForm">
+        <input type="text" id="taskTitle" placeholder="Task Title" required>
+        <input type="date" id="taskDate" required>
+        <select id="taskCategory">
+            <option value="Coursework">Coursework</option>
+            <option value="Project">Project</option>
+            <option value="Personal">Personal</option>
+        </select>
+        <button type="submit">Add Task</button>
+    </form>
+
+    <ul id="taskList"></ul>
+</section>
+
+<script src="assets/js/tasks.js"></script>
+</body>
+</html>

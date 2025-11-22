@@ -1,0 +1,45 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #eef2f7;
+}
+
+header {
+    background: #3f51b5;
+    color: white;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+nav a {
+    color: white;
+    margin-left: 15px;
+    text-decoration: none;
+}
+
+.container {
+    padding: 20px;
+}
+
+#taskList li {
+    background: white;
+    padding: 10px;
+    margin-top: 5px;
+    border-left: 5px solid #3f51b5;
+}
+
+form input, form select, form button {
+    padding: 10px;
+    margin-right: 10px;
+    margin-top: 10px;
+}
+
+.auth-container {
+    max-width: 400px;
+    margin: 60px auto;
+    background: white;
+    padding: 30px;
+    border-radius: 6px;
+}
