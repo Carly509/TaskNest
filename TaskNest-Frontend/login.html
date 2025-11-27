@@ -10,14 +10,86 @@
 <section class="auth-container">
     <h2>Login</h2>
 
-    <form>
-        <input type="email" placeholder="Email Address" required>
-        <input type="password" placeholder="Password" required>
-        <button>Login</button>
+    <form id="loginForm">
+        <input type="email" id="email" placeholder="Email Address" required>
+        <span id="email-error"></span>
+
+        <input type="password" id="password" placeholder="Password" required>
+        <span id="password-error"></span>
+
+        <button type="submit" id="loginButton">Login</button>
     </form>
 
     <p>No account? <a href="signup.html">Create one</a></p>
 </section>
+
+<script>
+    const form = document.getElementById('loginForm');
+    const emailInput = document.getElementById('email');
+    const passwordInput = document.getElementById('password');
+    const emailError = document.getElementById('email-error');
+    const passwordError = document.getElementById('password-error');
+    const loginButton = document.getElementById('loginButton');
+
+    function validateEmail() {
+        const value = emailInput.value.trim();
+        emailError.textContent = '';
+
+        if (!value) {
+            emailError.textContent = 'Email is required';
+            return false;
+        }
+
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(value)) {
+            emailError.textContent = 'Enter a valid email address';
+            return false;
+        }
+
+        return true;
+    }
+
+    function validatePassword() {
+        const value = passwordInput.value.trim();
+        passwordError.textContent = '';
+
+        if (!value) {
+            passwordError.textContent = 'Password is required';
+            return false;
+        }
+
+        if (value.length < 6) {
+            passwordError.textContent = 'Password must be at least 6 characters';
+            return false;
+        }
+
+        return true;
+    }
+
+    function updateButtonState() {
+        const valid = validateEmail() && validatePassword();
+        loginButton.disabled = !valid;
+    }
+
+    emailInput.addEventListener('input', updateButtonState);
+    passwordInput.addEventListener('input', updateButtonState);
+
+    form.addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        const isEmailValid = validateEmail();
+        const isPasswordValid = validatePassword();
+
+        if (isEmailValid && isPasswordValid) {
+            // Replace this with your real login logic (e.g., fetch/axios call)
+            alert('Form is valid. Submitting...');
+            // form.submit(); // if you want normal submit
+        }
+    });
+
+    // Initial button state
+    updateButtonState();
+</script>
 
 </body>
 </html>
