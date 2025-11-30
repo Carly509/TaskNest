@@ -2,25 +2,65 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TaskNest – Calendar</title>
     <link rel="stylesheet" href="assets/css/styles.css" />
 </head>
 <body>
+    <header>
+        <h1>TaskNest</h1>
+        <nav>
+            <a href="index.html">Dashboard</a>
+            <a href="calendar.html">Calendar</a>
+            <a href="login.html">Logout</a>
+        </nav>
+    </header>
 
-<header>
-    <h1>TaskNest</h1>
-    <nav>
-        <a href="index.html">Dashboard</a>
-        <a href="calendar.html">Calendar</a>
-        <a href="login.html">Logout</a>
-    </nav>
-</header>
+    <section class="container">
+        <div class="calendar-header">
+            <button id="prevMonth">&lt;</button>
+            <h2 id="monthYear"></h2>
+            <button id="nextMonth">&gt;</button>
+            <button id="todayBtn">Today</button>
+        </div>
+        <div class="calendar-grid">
+            <div class="calendar-header-days">
+                <div>Sun</div>
+                <div>Mon</div>
+                <div>Tue</div>
+                <div>Wed</div>
+                <div>Thu</div>
+                <div>Fri</div>
+                <div>Sat</div>
+            </div>
+            <div id="calendarDays"></div>
+        </div>
+        
+        <div class="calendar-events">
+            <h3>Today's Events</h3>
+            <div id="todayEvents"></div>
+            <button id="addEventBtn">+ Add Event</button>
+        </div>
+    </section>
 
-<section class="container">
-    <h2>Calendar View</h2>
-    <div id="calendar"></div>
-</section>
+    <!-- Event Modal -->
+    <div id="eventModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h3 id="modalTitle">Add Event</h3>
+            <form id="eventForm">
+                <input type="text" id="eventTitle" placeholder="Event Title" required>
+                <input type="datetime-local" id="eventDateTime" required>
+                <textarea id="eventDescription" placeholder="Description"></textarea>
+                <div class="form-actions">
+                    <button type="submit">Save Event</button>
+                    <button type="button" id="deleteEventBtn" style="display:none;">Delete</button>
+                    <button type="button" class="cancel">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
 
-<script src="assets/js/calendar.js"></script>
+    <script src="assets/js/calendar.js"></script>
 </body>
 </html>
