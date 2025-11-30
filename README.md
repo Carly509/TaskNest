@@ -12,3 +12,6 @@ My favorite quote: “Don’t watch the clock; do what it does. Keep going.” �
 My favorite quote: "Be the change that you wish to see in the world." - Mahatma Gandhi
 
 ~Joash Tantiangco
+
+My favorite quote: "Our deepest fear is not that we are inadequate. Our deepest fear is that we are powerful beyond measure. It is our light, not our darkness, that most frightens us" - Marianne Williamson
+~Carly Tesnor
